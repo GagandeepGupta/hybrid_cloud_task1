@@ -1,6 +1,6 @@
 provider "aws"{
   region    = "ap-south-1"
-  profile   = "yadav"
+  profile   = "gagan"
 }
 
 //Here I have created the key by GUI
@@ -63,7 +63,7 @@ resource "aws_instance" "WebServer" {
    connection {
     type     = "ssh"
     user     = "ec2-user"
-    private_key = file("C:/Users/LENOVO PC/Downloads/task1key.pem")
+    private_key = file("C:/Users/GD Gupta/Downloads/task1key.pem")
     host     = aws_instance.WebServer.public_ip
   }
     provisioner "remote-exec" {
@@ -119,7 +119,7 @@ depends_on = [
   connection {
     type     = "ssh"
     user     = "ec2-user"
-    private_key = file("C:/Users/LENOVO PC/Downloads/task1key.pem")
+    private_key = file("C:/Users/GD Gupta/Downloads/task1key.pem")
     host     = aws_instance.WebServer.public_ip
   }
 
@@ -157,8 +157,8 @@ depends_on = [
   key                    = "yadav.jpg"
   bucket                 = aws_s3_bucket.bucket-img.bucket
   acl                    = "public-read"
-  source                 = "C:\\Users\\LENOVO PC\\Desktop\\my-image\\yadav.jpg"
-  etag                   = "${filemd5("C:\\Users\\LENOVO PC\\Desktop\\my-image\\yadav.jpg")}"
+  source                 = "C:\\Users\\GD Gupta\\Desktop\\my-image\\gagan.jpg"
+  etag                   = "${filemd5("C:\\Users\\GD Gupta\\Desktop\\my-image\\gagan.jpg")}"
 }
 
 locals {
@@ -236,7 +236,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
    connection {
     type     = "ssh"
     user     = "ec2-user"
-    private_key = file("C:/Users/LENOVO PC/Downloads/task1key.pem")
+    private_key = file("C:/Users/GD Gupta/Downloads/task1key.pem")
     host     = aws_instance.WebServer.public_ip
   }
   
